@@ -21,6 +21,8 @@ import android.graphics.Canvas;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 
+import java.util.Locale;
+
 public class SimpleMonthView extends MonthView {
 
     public SimpleMonthView(Context context, AttributeSet attr, DatePickerController controller) {
@@ -55,6 +57,6 @@ public class SimpleMonthView extends MonthView {
             mMonthNumPaint.setColor(isHighlighted(year, month, day) ? mHighlightedDayTextColor : mDayTextColor);
         }
 
-        canvas.drawText(String.format("%d", day), x, y, mMonthNumPaint);
+        canvas.drawText(String.format(new Locale("en"),"%d", day), x, y, mMonthNumPaint);
     }
 }

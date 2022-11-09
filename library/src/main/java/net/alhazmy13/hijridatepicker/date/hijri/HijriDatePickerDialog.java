@@ -367,7 +367,7 @@ public class HijriDatePickerDialog extends DialogFragment implements
         animation2.setDuration(ANIMATION_DURATION);
         mAnimator.setOutAnimation(animation2);
 
-        MaterialButton okButton =  view.findViewById(R.id.mdtp_ok);
+        MaterialButton okButton = view.findViewById(R.id.mdtp_ok);
         okButton.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -381,7 +381,7 @@ public class HijriDatePickerDialog extends DialogFragment implements
         if (mOkString != null) okButton.setText(mOkString);
         else okButton.setText(mOkResid);
 
-        MaterialButton cancelButton =  view.findViewById(R.id.mdtp_cancel);
+        MaterialButton cancelButton = view.findViewById(R.id.mdtp_cancel);
         cancelButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -541,7 +541,7 @@ public class HijriDatePickerDialog extends DialogFragment implements
     }
 
     private void updateDisplay(boolean announce) {
-        mYearView.setText(String.format(getLocale(), "%2d", mCalendar.get(Calendar.YEAR)));
+        mYearView.setText(String.format(new Locale("en"), "%2d", mCalendar.get(Calendar.YEAR)));
         if (mVersion == Version.VERSION_1) {
             if (mDatePickerHeaderView != null) {
                 if (mTitle != null)
@@ -552,7 +552,7 @@ public class HijriDatePickerDialog extends DialogFragment implements
                 }
             }
             mSelectedMonthTextView.setText(String.valueOf(mCalendar.getDisplayName(Calendar.MONTH, Calendar.SHORT, getLocale())));
-            mSelectedDayTextView.setText(String.format(getLocale(), "%2d", mCalendar.get(Calendar.DAY_OF_MONTH)));
+            mSelectedDayTextView.setText(String.format(new Locale("en"), "%2d", mCalendar.get(Calendar.DAY_OF_MONTH)));
         }
 
         if (mVersion == Version.VERSION_2) {

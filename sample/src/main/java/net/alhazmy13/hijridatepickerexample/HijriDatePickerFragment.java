@@ -61,7 +61,7 @@ public class HijriDatePickerFragment extends Fragment implements HijriDatePicker
         dateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UmmalquraCalendar now = new UmmalquraCalendar();
+                UmmalquraCalendar now = new UmmalquraCalendar(new Locale("ar"));
                 HijriDatePickerDialog dpd = HijriDatePickerDialog.newInstance(
                         HijriDatePickerFragment.this,
                         now.get(Calendar.YEAR),
@@ -99,7 +99,7 @@ public class HijriDatePickerFragment extends Fragment implements HijriDatePicker
 //                    dpd.setSelectableDays(days);
                 }
                 //Change the language to any of supported language
-                dpd.setLocale(Locale.getDefault());
+                dpd.setLocale(new Locale("ar"));
                 assert getFragmentManager() != null;
                 dpd.show(getFragmentManager(), "Datepickerdialog");
             }
